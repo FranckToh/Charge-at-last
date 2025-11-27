@@ -1,0 +1,8 @@
+{
+  "name": "Charge@Last SaaS",
+  "description": "On-demand mobile EV charging platform with client app and admin fleet management dashboard.",
+  "requestFramePermissions": [
+    "geolocation",
+    "microphone"
+  ]
+}
