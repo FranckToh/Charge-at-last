@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageSquare, X, Send, Sparkles, Bot, Image as ImageIcon, Volume2, Loader2 } from 'lucide-react';
-import { sendMessageToGemini, generateSpeech } from '../services/geminiService';
+import { sendMessageToAI, generateSpeech } from '../services/aiService';
 import { playClickSound, playSuccessSound, playMessageSound } from '../utils/soundEffects';
 import { ChatMessage } from '../types';
 
@@ -64,7 +64,7 @@ export const AIAssistant: React.FC = () => {
       // Ignore location error
     }
 
-    const responseText = await sendMessageToGemini(messages, inputValue, userMsg.image, location);
+    const responseText = await sendMessageToAI(messages, inputValue, userMsg.image, location);
     
     const modelMsg: ChatMessage = { role: 'model', text: responseText, timestamp: Date.now() };
     setMessages(prev => [...prev, modelMsg]);

@@ -13,15 +13,21 @@ Your app is configured to automatically deploy to **GitHub Pages** on every push
    - Source: Select **GitHub Actions**
 5. Click **Save**
 
-### Step 2: Add Gemini API Key (Optional but Recommended)
+### Step 2: Add AI API Keys (Optional but Recommended)
 
-To enable AI features, add your Gemini API key as a secret:
+The app supports **both Groq and Gemini APIs** for AI features:
 
+**Option A: Use Groq (Faster, great for chat)**
 1. In your repository, go to **Settings** → **Secrets and variables** → **Actions**
-2. Click **New repository secret**
-3. Name: `GEMINI_API_KEY`
-4. Value: Your Gemini API key from https://aistudio.google.com/app/apikey
-5. Click **Add secret**
+2. If you already have Groq integration, check if `GROQ_API_KEY` exists
+3. If not, get a free key from https://console.groq.com/keys
+4. Add as secret: `GROQ_API_KEY`
+
+**Option B: Use Gemini (Better for vision/maps)**
+1. Get API key from https://aistudio.google.com/app/apikey
+2. Add as secret: `GEMINI_API_KEY`
+
+**Best: Add both!** The app will use Groq for fast text chat and Gemini for images/maps.
 
 ### Step 3: Trigger Deployment
 
